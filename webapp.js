@@ -40,13 +40,13 @@ var routes = require('./controllers/router');
 var router = express.Router();
 
 // Add CSRF protection for web routes
-if (process.env.NODE_ENV !== 'test') {
-  app.use(csurf());
-  app.use(function(request, response, next) {
-    response.locals.csrftoken = request.csrfToken();
-    next();
-  });
-}
+// if (process.env.NODE_ENV !== 'test') {
+//   app.use(csurf());
+//   app.use(function(request, response, next) {
+//     response.locals.csrftoken = request.csrfToken();
+//     next();
+//   });
+// }
 
 routes(router);
 app.use(router);
